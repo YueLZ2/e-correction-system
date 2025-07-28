@@ -1,0 +1,74 @@
+/* src/frontend/src/assets/main.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+:root {
+  --primary-color: #3B82F6;
+  --secondary-color: #6B7280;
+}
+
+/* Base styles */
+html, body {
+  @apply antialiased;
+}
+
+body {
+  @apply bg-gray-100 text-gray-900;
+}
+
+/* Component styles */
+.btn {
+  @apply px-4 py-2 rounded-lg transition-colors duration-200;
+}
+
+.btn-primary {
+  @apply bg-primary text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-secondary text-white hover:bg-gray-700;
+}
+
+/* BPMN viewer styles */
+.bpmn-viewer {
+  @apply w-full h-full;
+}
+
+.bpmn-viewer .djs-overlay {
+  @apply bg-white shadow-lg rounded-lg;
+}
+
+/* Form styles */
+.form-input {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary;
+}
+
+.form-textarea {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary resize-none;
+}
+
+/* Animation */
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition-opacity duration-300;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400;
+}

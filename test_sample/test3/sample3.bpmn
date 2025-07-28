@@ -1,0 +1,12 @@
+<bpmn:process id="Process_3">
+  <bpmn:startEvent id="start3"/>
+  <bpmn:parallelGateway id="fork2"/>
+  <bpmn:userTask id="task1" name="需求分析"/>
+  <bpmn:userTask id="task2" name="UI设计"/>
+  <bpmn:userTask id="task3" name="架构设计"/>
+  <bpmn:endEvent id="end3"/>
+  <bpmn:sequenceFlow sourceRef="start3" targetRef="fork2"/>
+  <bpmn:sequenceFlow sourceRef="fork2" targetRef="task1"/>
+  <bpmn:sequenceFlow sourceRef="fork2" targetRef="task2"/>
+  <bpmn:sequenceFlow sourceRef="fork2" targetRef="task3"/>
+</bpmn:process>

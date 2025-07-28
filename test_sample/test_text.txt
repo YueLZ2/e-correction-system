@@ -1,0 +1,1 @@
+After the user selects the goods and checks them, they successfully make the payment. If the payment fails, they try again

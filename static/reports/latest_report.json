@@ -1,0 +1,35 @@
+{
+  "diagram_svg": "static\\reports\\bpmn_diagram.svg",
+  "suggestions": [
+    {
+      "expert": "BPMN文本一致性检测专家",
+      "error_type": "Inconsistent processes",
+      "description": "The BPMN process does not include steps for returning to the login page if identity verification fails.",
+      "suggestion": "Add a user task or a gateway that leads to the 'return to login page' action when verification fails."
+    }
+  ],
+  "corrections": [
+    {
+      "expert": "BPMN2.0综合修正专家",
+      "bpmn": "```dot\ndigraph BPMN {\n    rankdir=LR;\n    node [shape=box];\n\n    Start [label=\"Login Event\"];\n    IdentityVerification [label=\"Identity Verification\"];\n    SuccessDecision [label=\"Success?\", shape=diamond];\n    FailureDecision [label=\"Failure?\", shape=diamond];\n    EnterPanel [label=\"Enter Panel\"];\n    ReturnToLoginPage [label=\"Return to Login Page\"];\n    End [label=\"End\", shape=circle];\n\n    Start -> IdentityVerification;\n    IdentityVerification -> SuccessDecision;\n    SuccessDecision -> EnterPanel [label=\"Yes\"];\n    SuccessDecision -> FailureDecision [label=\"No\"];\n    FailureDecision -> ReturnToLoginPage [label=\"Yes\"];\n    FailureDecision -> End [label=\"No\"];\n    EnterPanel -> End;\n    ReturnToLoginPage -> End;\n}\n```",
+      "modifications": {
+        "modified_elements": 690,
+        "change_details": [
+          "检测到流程结构修改",
+          "元素属性更新"
+        ]
+      }
+    },
+    {
+      "expert": "BPMN快速修正专家",
+      "bpmn": "```dot\ndigraph BPMN {\n    rankdir=LR;\n    node [shape=box];\n\n    Start [label=\"Login Event\"];\n    IdentityVerification [label=\"Identity Verification\"];\n    SuccessDecision [label=\"Success?\", shape=diamond];\n    FailureDecision [label=\"Failure?\", shape=diamond];\n    EnterPanel [label=\"Enter Panel\"];\n    ReturnToLoginPage [label=\"Return to Login Page\"];\n    End [label=\"End\", shape=circle];\n\n    Start -> IdentityVerification;\n    IdentityVerification -> SuccessDecision;\n    SuccessDecision -> EnterPanel [label=\"Yes\"];\n    SuccessDecision -> FailureDecision [label=\"No\"];\n    FailureDecision -> ReturnToLoginPage [label=\"Yes\"];\n    FailureDecision -> End [label=\"No\"];\n    EnterPanel -> End;\n    ReturnToLoginPage -> End;\n}\n```",
+      "modifications": {
+        "modified_elements": 661,
+        "change_details": [
+          "检测到流程结构修改",
+          "元素属性更新"
+        ]
+      }
+    }
+  ]
+}

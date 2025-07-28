@@ -1,0 +1,10 @@
+<bpmn:process id="Process_2">
+  <bpmn:startEvent id="start2"/>
+  <bpmn:parallelGateway id="fork"/>
+  <bpmn:userTask id="taskA" name="采购审批"/>
+  <bpmn:userTask id="taskB" name="财务审批"/>
+  <bpmn:endEvent id="end2"/>
+  <bpmn:sequenceFlow sourceRef="start2" targetRef="fork"/>
+  <bpmn:sequenceFlow sourceRef="fork" targetRef="taskA"/>
+  <bpmn:sequenceFlow sourceRef="fork" targetRef="taskB"/>
+</bpmn:process>

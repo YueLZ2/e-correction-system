@@ -1,0 +1,9 @@
+<bpmn:process id="Process_1">
+  <bpmn:startEvent id="start1"/>
+  <bpmn:userTask id="submit" name="提交申请"/>
+  <bpmn:userTask id="approve" name="主管审批"/>
+  <bpmn:endEvent id="end1"/>
+  <bpmn:sequenceFlow sourceRef="start1" targetRef="submit"/>
+  <bpmn:sequenceFlow sourceRef="submit" targetRef="approve"/>
+  <bpmn:sequenceFlow sourceRef="approve" targetRef="end1"/>
+</bpmn:process>

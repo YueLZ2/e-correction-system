@@ -1,0 +1,29 @@
+
+    graph LR
+        classDef original fill:#FFF,stroke:#9E9E9E;
+        classDef modified fill:#E8F5E9,stroke:#4CAF50;
+        classDef error fill:#FFCDD2,stroke:#D32F2F;
+        
+        subgraph "左栏：原始流程 [图1]"
+            S1([Start]):::original --> P1("Production batch"):::original
+            P1 --> Q1("quality testing"):::original
+            Q1 --> E1([End]):::original
+            style S1 fill:#BBDEFB,stroke:#1976D2
+            style E1 fill:#BBDEFB,stroke:#1976D2
+        end
+        
+        subgraph "右栏：修改后流程 [图2]"
+            S2([Start]):::modified --> P2("production batch"):::modified
+            P2 --> D1("Passed the quality inspection?"):::modified
+            D1 -->|Yes| Y1("uality inspection"):::error
+            D1 -->|No| N1("rework"):::modified
+            Y1 --> V1("Packaging verification"):::modified
+            N1 --> V1
+            V1 --> E2([End]):::modified
+            style S2 fill:#E1F5FE,stroke:#0D47A1
+            style E2 fill:#E1F5FE,stroke:#0D47A1
+        end
+        
+        linkStyle 3 stroke:#D32F2F,stroke-dasharray:5 5
+        linkStyle 9 stroke:#4CAF50,stroke-dasharray:5 5
+    
